@@ -1,0 +1,163 @@
+
+/* CUSTOM PROPERTIES */
+:root {
+    --clr-primary-400: hsl(158, 36%, 37%);
+    --clr-primary-600: hsl(158, 36%, 17%);
+    --clr-secondary-200: hsl(30, 38%, 92%);
+    --clr-neutral-800: hsl(212, 21%, 14%);
+    --clr-neutral-300: hsl(228, 12%, 48%);
+    --clr-neutral-100: hsl(0, 0%, 100%);
+
+    --fs-body: 0.875rem;
+
+    --ff-accent: "Fraunces", serif;
+    --ff-regular: "Montserrat", serif;
+    --fw-regular: 500;
+    --fw-bold: 700;
+}
+
+
+
+/*  ====  CSS RESET ==== */
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  /* 2. Remove default margin */
+  * {
+    margin: 0;
+  }
+  
+  body {
+    /* 3. Add accessible line-height */
+    line-height: 1.6;
+    /* 4. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  /* 5. Improve media defaults */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  
+  /* 6. Inherit fonts for form controls */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  
+  /* 7. Avoid text overflows */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  
+  /* 8. Improve line wrapping */
+  p {
+    text-wrap: pretty;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+  h1, h2, h3 {
+    line-height: 1;
+  }
+  /*
+    9. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+  /* ==== GENERAL STYLING ==== */
+  body {
+    font-family: var(--ff-regular);
+    font-weight: var(--fw-regular);
+    font-size: var(--fs-body);
+    color: var(--clr-neutral-300);
+    background-color: var(--clr-secondary-200);
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    margin: 1rem;
+  }
+
+  /* ==== UTILITY CLASSES ==== */
+  .flex-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  .visually-hidden:not(:focus):not(:active){
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  /* ==== PRODUCT STYLING ==== */
+  .product {
+    --content-padding: 1.5rem;
+    --content-spacing: 1rem;
+    border-radius: .5rem;
+    overflow: hidden;
+    display: grid;
+    max-width: 600px;
+  }
+
+  @media (min-width:700px){
+    .product {
+      grid-template-columns: 1fr 1fr;
+      --content-padding: 2rem;
+    }
+  }
+  
+  .product-content {
+    background-color: var(--clr-neutral-100);
+    padding: var(--content-padding);
+    display: grid;
+    gap: var(--content-spacing);
+  }
+  .product-category {
+    text-transform: uppercase;
+    letter-spacing: 7px;
+    font-size: 0.8125rem;
+  }
+  .product-title {
+    font-weight: var(--fw-bold);
+    font-size: 2rem;
+    font-family: var(--ff-accent);
+    color: var(--clr-neutral-800);
+  }
+  .current-price {
+    color: var(--clr-primary-400);
+    font-weight: var(--fw-bold);
+    font-size: 2rem;
+    font-family: var(--ff-accent);
+  }
+  .btn {
+    cursor: pointer;
+    background-color: var(--clr-primary-400);
+    color: var(--clr-neutral-100);
+    font-weight: var(--fw-bold);
+    justify-content: center;
+    gap: 0.75rem;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5em 1.5em;
+  }
+  .btn:is(:hover, :focus) {
+    background-color: var(--clr-primary-600);
+  }
+  .btn[data-icon="shopping-cart"]::before{
+    content: "";
+    width: 15px;
+    height: 16px;
+    background-image: url("images/icon-cart.svg");
+  }
+
+  
