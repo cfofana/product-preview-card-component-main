@@ -33,7 +33,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: (https://github.com/cfofana/product-preview-card-component-main)
-- Live Site URL: [Add live site URL here](https://tiny-lollipop-4ddb2e.netlify.app/)
+- Live Site URL: (https://tiny-lollipop-4ddb2e.netlify.app/)
 
 ## My process
 
